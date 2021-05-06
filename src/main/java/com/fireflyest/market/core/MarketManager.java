@@ -5,10 +5,8 @@ import com.fireflyest.market.bean.Note;
 import com.fireflyest.market.bean.Sale;
 import com.fireflyest.market.data.Config;
 import com.fireflyest.market.data.DataManager;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * @author Fireflyest

@@ -1,6 +1,5 @@
 package com.fireflyest.market.util;
 
-import com.cryptomorin.xseries.XMaterial;
 import com.fireflyest.market.data.Language;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;

@@ -3,7 +3,6 @@ package com.fireflyest.market.util;
 import com.cryptomorin.xseries.XMaterial;
 import com.fireflyest.market.bean.Mail;
 import com.fireflyest.market.bean.Sale;
-import com.fireflyest.market.data.Language;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;

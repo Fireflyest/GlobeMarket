@@ -11,6 +11,8 @@ import com.fireflyest.market.listener.PlayerEventListener;
 import com.fireflyest.market.util.YamlUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.java.annotation.command.Command;
@@ -80,14 +82,20 @@ public class GlobeMarket extends JavaPlugin {
         // 统计
         MarketStatistic.getInstance().init();
 
-        //注册事件
-        this.getServer().getPluginManager().registerEvents( new PlayerEventListener(this), this);
+        // 注册事件
+        this.getServer().getPluginManager().registerEvents( new PlayerEventListener(), this);
 
-        //注册指令
+        // 注册指令
         PluginCommand command = this.getCommand("market");
         if(command!=null){
             command.setExecutor(new MarketCommand());
             command.setTabCompleter(new MarketTab());
+        }
+
+        // TODO: 2021/5/6 测试
+        // 重载初始化User数据
+        for (Player onlinePlayer : getServer().getOnlinePlayers()) {
+            this.getServer().getPluginManager().callEvent(new PlayerJoinEvent(onlinePlayer, null));
         }
 
     }

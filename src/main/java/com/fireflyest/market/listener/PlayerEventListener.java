@@ -22,9 +22,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.List;
 
 public class PlayerEventListener implements Listener {
 
@@ -35,12 +32,10 @@ public class PlayerEventListener implements Listener {
     private final MarketAffair marketAffair;
     private final MarketMine marketMine;
     private final MarketClassify marketClassify;
-    private final JavaPlugin plugin;
     private final Sound clickSound;
     private final Sound cancelSound;
 
-    public PlayerEventListener(JavaPlugin plugin){
-        this.plugin = plugin;
+    public PlayerEventListener(){
 
         dataManager = DataManager.getInstance();
 

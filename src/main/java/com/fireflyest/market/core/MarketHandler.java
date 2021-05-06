@@ -1,7 +1,5 @@
 package com.fireflyest.market.core;
 
-import com.cryptomorin.xseries.XMaterial;
-import com.fireflyest.market.GlobeMarket;
 import com.fireflyest.market.bean.Mail;
 import com.fireflyest.market.bean.Sale;
 import com.fireflyest.market.bean.User;
@@ -42,7 +40,7 @@ public class MarketHandler implements MarketInteract{
     private static final MarketHandler marketHandler = new MarketHandler();
 
     private Economy economy;
-    private Economy pointEconomy;
+//    private Economy pointEconomy;
 
     private BukkitTask tradeQueue;
     private BukkitTask mailQueue;

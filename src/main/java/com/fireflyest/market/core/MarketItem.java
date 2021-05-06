@@ -24,7 +24,9 @@ public class MarketItem {
     public static ItemStack BLANK;
     public static ItemStack BOOK;
     public static ItemStack CANCEL;
-    public static ItemStack ADD;
+    public static ItemStack ADD_NUGGET;
+    public static ItemStack ADD_INGOT;
+    public static ItemStack ADD_BLOCK;
     public static ItemStack PAGE;
     public static ItemStack ERROR;
 
@@ -124,8 +126,16 @@ public class MarketItem {
         }
 
         Material add = XMaterial.GOLD_NUGGET.parseMaterial();
+        Material addIngot = XMaterial.GOLD_NUGGET.parseMaterial();
+        Material addBlock = XMaterial.GOLD_NUGGET.parseMaterial();
         if(null != add){
-            ADD = new ItemStack(add);
+            ADD_NUGGET = new ItemStack(add);
+        }
+        if (addIngot != null) {
+            ADD_INGOT = new ItemStack(addIngot);
+        }
+        if (addBlock != null) {
+            ADD_BLOCK = new ItemStack(addBlock);
         }
 
         Material page = XMaterial.PAPER.parseMaterial();

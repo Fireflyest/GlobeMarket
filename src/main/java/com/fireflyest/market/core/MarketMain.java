@@ -1,6 +1,5 @@
 package com.fireflyest.market.core;
 
-import com.fireflyest.market.bean.Mail;
 import com.fireflyest.market.bean.Sale;
 import com.fireflyest.market.data.Config;
 import com.fireflyest.market.data.Language;
@@ -9,7 +8,6 @@ import com.fireflyest.market.util.SerializeUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;

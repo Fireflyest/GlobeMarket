@@ -3,14 +3,10 @@ package com.fireflyest.market.core;
 import com.fireflyest.market.bean.Sale;
 import com.fireflyest.market.data.Language;
 import com.fireflyest.market.util.*;
-import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 
@@ -129,22 +125,21 @@ public class MarketAffair implements MarketPage<Sale>, MarketInteract{
 
         // 添加交易操作按钮
         if(sale.isAuction()){
-            Material nugget = MarketItem.ADD.getType();
-            ItemStack add1 = new ItemStack(nugget);
+            ItemStack add1 = MarketItem.ADD_NUGGET.clone();
             ItemUtils.setDisplayName(add1, "§e§l加价");
             ItemUtils.addLore(add1, "§3§l增加§7:§f 10");
             ItemUtils.addLore(add1, "§3§l当前§7:§f "+sale.getCost());
             ItemUtils.setItemValue(add1, "add "+sale.getId()+" 10");
             inv.setItem(13, add1);
 
-            ItemStack add2 = new ItemStack(nugget);
+            ItemStack add2 = MarketItem.ADD_INGOT.clone();
             ItemUtils.setDisplayName(add2, "§e§l加价");
             ItemUtils.addLore(add2, "§3§l增加§7:§f 100");
             ItemUtils.addLore(add2, "§3§l当前§7:§f "+sale.getCost());
             ItemUtils.setItemValue(add2, "add "+sale.getId()+" 100");
             inv.setItem(14, add2);
 
-            ItemStack add3 = new ItemStack(nugget);
+            ItemStack add3 = MarketItem.ADD_BLOCK.clone();
             ItemUtils.setDisplayName(add3, "§e§l加价");
             ItemUtils.addLore(add3, "§3§l增加§7:§f 1000");
             ItemUtils.addLore(add3, "§3§l当前§7:§f "+sale.getCost());

@@ -1,6 +1,5 @@
 package com.fireflyest.market.core;
 
-import com.fireflyest.market.GlobeMarket;
 import com.fireflyest.market.bean.Note;
 import com.fireflyest.market.bean.Sale;
 import com.fireflyest.market.bean.User;
@@ -8,8 +7,6 @@ import com.fireflyest.market.data.DataManager;
 import com.fireflyest.market.data.Language;
 import com.fireflyest.market.util.TimeUtils;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.List;

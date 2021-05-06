@@ -2,8 +2,6 @@ package com.fireflyest.market.util;
 
 import java.math.RoundingMode;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Fireflyest
@@ -86,21 +84,6 @@ public class ConvertUtils {
             default:
         }
         return "varchar(31)";
-    }
-
-
-    public static <T> List<T> convertList(Object obj, Class<T> clazz)
-    {
-        List<T> result = new ArrayList<T>();
-        if(obj instanceof List<?>)
-        {
-            for (Object o : (List<?>) obj)
-            {
-                result.add(clazz.cast(o));
-            }
-            return result;
-        }
-        return null;
     }
 
     public static int parseInt(String var){
