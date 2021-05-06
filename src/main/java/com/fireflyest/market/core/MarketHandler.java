@@ -42,8 +42,8 @@ public class MarketHandler implements MarketInteract{
     private Economy economy;
 //    private Economy pointEconomy;
 
-    private BukkitTask tradeQueue;
-    private BukkitTask mailQueue;
+    private BukkitTask tradeLooper;
+    private BukkitTask mailLooper;
     private boolean enable;
 
     private DataManager dataManager;
@@ -65,7 +65,7 @@ public class MarketHandler implements MarketInteract{
         marketManager = MarketManager.getInstance();
 
         // 开启两个线程运行队列
-        tradeQueue = new BukkitRunnable() {
+        tradeLooper = new BukkitRunnable() {
             @Override
             public void run() {
                 while (enable) {
@@ -86,7 +86,7 @@ public class MarketHandler implements MarketInteract{
             }
         }.runTaskAsynchronously(plugin);
 
-        mailQueue = new BukkitRunnable() {
+        mailLooper = new BukkitRunnable() {
             @Override
             public void run() {
                 while (enable) {
@@ -116,10 +116,10 @@ public class MarketHandler implements MarketInteract{
         synchronized (MAIL_QUEUE){
             MAIL_QUEUE.notify();
         }
-        tradeQueue.cancel();
-        mailQueue.cancel();
-        tradeQueue = null;
-        mailQueue = null;
+        tradeLooper.cancel();
+        mailLooper.cancel();
+        tradeLooper = null;
+        mailLooper = null;
     }
 
     private void executeTradeTask(MarketTask task){

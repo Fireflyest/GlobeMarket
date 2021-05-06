@@ -20,6 +20,8 @@ public class MarketItem {
     public static ItemStack SIGN;
     public static ItemStack MAIL;
     public static ItemStack MENU;
+    public static ItemStack POINT;
+    public static ItemStack ADMIN;
     public static ItemStack CLOSE;
     public static ItemStack BLANK;
     public static ItemStack BOOK;
@@ -93,6 +95,22 @@ public class MarketItem {
             ItemUtils.setItemValue(MENU, "menu");
         }
 
+        Material point = XMaterial.DIAMOND.parseMaterial();
+        if(null != point){
+            POINT = new ItemStack(point);
+            ItemUtils.setDisplayName(POINT, "§3§l点券商城");
+            ItemUtils.addLore(POINT, "§f点击打开");
+            ItemUtils.setItemValue(POINT, "point");
+        }
+
+        Material admin = XMaterial.ITEM_FRAME.parseMaterial();
+        if(null != admin){
+            ADMIN = new ItemStack(admin);
+            ItemUtils.setDisplayName(ADMIN, "§3§l系统商城");
+            ItemUtils.addLore(ADMIN, "§f点击打开");
+            ItemUtils.setItemValue(ADMIN, "admin");
+        }
+
         Material clean = XMaterial.FEATHER.parseMaterial();
         if(null != clean){
             SIGN = new ItemStack(clean);
@@ -126,8 +144,8 @@ public class MarketItem {
         }
 
         Material add = XMaterial.GOLD_NUGGET.parseMaterial();
-        Material addIngot = XMaterial.GOLD_NUGGET.parseMaterial();
-        Material addBlock = XMaterial.GOLD_NUGGET.parseMaterial();
+        Material addIngot = XMaterial.GOLD_INGOT.parseMaterial();
+        Material addBlock = XMaterial.GOLD_BLOCK.parseMaterial();
         if(null != add){
             ADD_NUGGET = new ItemStack(add);
         }

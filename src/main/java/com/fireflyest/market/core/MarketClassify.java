@@ -69,6 +69,7 @@ public class MarketClassify implements MarketPage<Sale> {
         empty.setItem(0, MarketItem.MARKET);
         empty.setItem(7, MarketItem.CLASSIFY);
         empty.setItem(8, MarketItem.CLOSE);
+
         page = Bukkit.createInventory(null, 27,Language.PLUGIN_NAME + " §9分类");
         page.setItem(0, MarketItem.EDIBLE);
         page.setItem(1, MarketItem.ITEM);
@@ -80,7 +81,12 @@ public class MarketClassify implements MarketPage<Sale> {
         page.setItem(7, MarketItem.EQUIP);
         page.setItem(8, MarketItem.KNOWLEDGE);
         page.setItem(18, MarketItem.MARKET);
+        page.setItem(19, MarketItem.POINT);
+        page.setItem(20, MarketItem.ADMIN);
         page.setItem(26, MarketItem.CLOSE);
+        for (int i = 9; i < 18; i++) {
+            page.setItem(i, MarketItem.BLANK);
+        }
     }
 
     @Override

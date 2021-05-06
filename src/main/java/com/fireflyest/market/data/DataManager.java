@@ -61,7 +61,7 @@ public class DataManager {
         // 初始化当天统计数据
         String day = TimeUtils.getTimeToday();
         for (Note note : notes) {
-            if (!note.getDay().equals(day)) break;
+            if (!note.getDay().equals(day)) continue;
             todayNote = note;
             break;
         }
